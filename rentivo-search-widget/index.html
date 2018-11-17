@@ -11,4 +11,49 @@
     }
   } catch (e) {
     console.warn('unable to connect to parent frame for connecting dev tools');
-  }</script></head><body><div id="root"></div><script src="static/runtime~manager.9ffd8dd7b8642e4235e2.bundle.js"></script><script src="static/manager.c9f5ff4870f0c92e77c0.bundle.js"></script></body></html>
+  }</script><style>.css-16z7x6f {
+        height: calc(100vh - 36px) !important;
+    }
+
+    .fullscreen {
+        display: block;
+        position: fixed;
+        width: 100%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 10px 0;
+
+        background: #008D13;
+
+        color: #fff;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 16px;
+        text-align: center;
+        text-decoration: none;
+
+        transition: background-color 0.3s;
+        z-index: 1000;
+    }
+
+    .fullscreen:hover {
+        background: #4CAF50;
+    }</style><script>var TogglePanelsElement         = document.createElement('a');
+    TogglePanelsElement.className   = 'fullscreen';
+    TogglePanelsElement.textContent = 'Show/Hide Panels';
+    TogglePanelsElement.href        = '#';
+
+    TogglePanelsElement.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (!window.__STORYBOOK_ADDONS || !window.__STORYBOOK_ADDONS.toggleFullscreen) return;
+        window.__STORYBOOK_ADDONS.toggleFullscreen();
+    });
+
+    !function appendToBody() {
+        if (document.body) {
+            document.body.appendChild(TogglePanelsElement);
+        } else {
+            setTimeout(appendToBody, 500);
+        }
+    }();</script></head><body><div id="root"></div><script src="static/runtime~manager.9ffd8dd7b8642e4235e2.bundle.js"></script><script src="static/manager.711ab69f67c96ea3e1e9.bundle.js"></script></body></html>
