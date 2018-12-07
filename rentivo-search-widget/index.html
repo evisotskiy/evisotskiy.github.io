@@ -48,6 +48,34 @@
         right: 0;
 
         border-radius: 5px 0 0 0;
+    }
+
+    .Pane div[role="tablist"] + div form label {
+        flex-wrap: wrap;
+    }
+
+    .Pane div[role="tablist"] + div form label > * {
+        min-width: 100%
+    }
+
+    .Pane div[role="tablist"] + div form label > input[type="checkbox"] {
+        min-width: auto;
+    }
+
+    .Pane div[role="tablist"] + div form label > textarea {
+        /*max-height: 200px;*/
+    }
+
+    .Pane div[role="tablist"] + div form label > *:first-child {
+        font-weight: bold;
+    }
+
+    .Pane div[role="tablist"] + div form label > *:first-child {
+        font-weight: bold;
+    }
+
+    .Pane div[role="tablist"] + div div[role="tablist"] button[role="tab"]:last-child {
+        display: none;
     }</style><script>var ToggleStoriesPanelElement         = document.createElement('a');
     ToggleStoriesPanelElement.className   = 'panelToggler panelToggler--stories';
     ToggleStoriesPanelElement.textContent = 'Show/Hide Stories Panel';
@@ -77,4 +105,15 @@
         } else {
             setTimeout(appendToBody, 500);
         }
-    }();</script></head><body><div id="root"></div><script src="static/runtime~manager.9ffd8dd7b8642e4235e2.bundle.js"></script><script src="static/manager.56b0412ce7a235fb3795.bundle.js"></script></body></html>
+    }();</script><script>// Overwrite the default title - cannot be set in the API
+    document.title = 'Rentivo Search Widget Storybook';</script><script>!function manageTabs() {
+        if (document.body) {
+            // hide readme tab
+            const toHidingTabs = ['README'];
+            [...document.querySelectorAll('.Pane div[role="tablist"] button[role="tab"]')]
+                .filter(tab => toHidingTabs.includes(tab.textContent))
+                .forEach(tab => tab.style.display = 'none');
+        } else {
+            setTimeout(manageTabs, 500)
+        }
+    }()</script></head><body><div id="root"></div><script src="static/runtime~manager.9ffd8dd7b8642e4235e2.bundle.js"></script><script src="static/manager.64aa7ed7de351e5a474d.bundle.js"></script></body></html>
