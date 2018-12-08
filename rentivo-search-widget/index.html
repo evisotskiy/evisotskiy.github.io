@@ -81,7 +81,7 @@
     ToggleStoriesPanelElement.textContent = 'Show/Hide Stories Panel';
     ToggleStoriesPanelElement.href        = '#';
 
-    ToggleStoriesPanelElement.addEventListener('click', (e) => {
+    ToggleStoriesPanelElement.addEventListener('click', function (e) {
         e.preventDefault();
         if (!window.__STORYBOOK_ADDONS || !window.__STORYBOOK_ADDONS.toggleStoriesPanel) return;
         window.__STORYBOOK_ADDONS.toggleStoriesPanel(e);
@@ -92,7 +92,7 @@
     ToggleAddonPanelElement.textContent = 'Show/Hide Addon Panel';
     ToggleAddonPanelElement.href        = '#';
 
-    ToggleAddonPanelElement.addEventListener('click', (e) => {
+    ToggleAddonPanelElement.addEventListener('click', function (e) {
         e.preventDefault();
         if (!window.__STORYBOOK_ADDONS || !window.__STORYBOOK_ADDONS.toggleAddonPanel) return;
         window.__STORYBOOK_ADDONS.toggleAddonPanel(e);
@@ -109,11 +109,17 @@
     document.title = 'Rentivo Search Widget Storybook';</script><script>!function manageTabs() {
         if (document.body) {
             // hide readme tab
-            const toHidingTabs = ['README'];
-            [...document.querySelectorAll('.Pane div[role="tablist"] button[role="tab"]')]
-                .filter(tab => toHidingTabs.includes(tab.textContent))
-                .forEach(tab => tab.style.display = 'none');
+            var toHidingTabs = ['README'];
+            var tabList      = document.querySelectorAll('.Pane div[role="tablist"] button[role="tab"]')
+            tabList          = Array.prototype.slice.call(toHidingTabs, '0');
+            tabList
+                .filter(function (tab) {
+                    return ~toHidingTabs.indexOf(tab.textContent)
+                })
+                .forEach(function (tab) {
+                    return tab.style.display = 'none';
+                });
         } else {
             setTimeout(manageTabs, 500)
         }
-    }()</script></head><body><div id="root"></div><script src="static/runtime~manager.9ffd8dd7b8642e4235e2.bundle.js"></script><script src="static/manager.fbe29fe913706416ae0a.bundle.js"></script></body></html>
+    }()</script></head><body><div id="root"></div><script src="static/runtime~manager.9ffd8dd7b8642e4235e2.bundle.js"></script><script src="static/manager.d65733f0429594fce4a1.bundle.js"></script></body></html>
