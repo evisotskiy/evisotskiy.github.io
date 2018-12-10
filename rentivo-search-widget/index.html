@@ -110,16 +110,16 @@
         if (document.body) {
             // hide readme tab
             var toHidingTabs = ['README'];
-            var tabList      = document.querySelectorAll('.Pane div[role="tablist"] button[role="tab"]')
-            tabList          = Array.prototype.slice.call(toHidingTabs, '0');
+            var tabList      = document.querySelectorAll('.Pane div[role="tablist"] button[role="tab"]');
+            tabList          = Array.prototype.slice.call(tabList, '0');
             tabList
                 .filter(function (tab) {
                     return ~toHidingTabs.indexOf(tab.textContent)
                 })
                 .forEach(function (tab) {
-                    return tab.style.display = 'none';
+                    tab.style.display = 'none';
                 });
         } else {
             setTimeout(manageTabs, 500)
         }
-    }()</script></head><body><div id="root"></div><script src="static/runtime~manager.9ffd8dd7b8642e4235e2.bundle.js"></script><script src="static/manager.f589b45e4b9021e3e1ce.bundle.js"></script></body></html>
+    }()</script></head><body><div id="root"></div><script src="static/runtime~manager.9ffd8dd7b8642e4235e2.bundle.js"></script><script src="static/manager.c1c2a30d3e6f9ff436ab.bundle.js"></script></body></html>
